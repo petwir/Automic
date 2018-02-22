@@ -1,0 +1,61 @@
+
+c:\>C:\Automic\v11\Agents\Windows\bin\UCXJWX6M.EXE JNR=0001458960 MNR=0411 PNR=2311 IPA=10.1.1.58 TYP=S TXT="        Job started" 
+Program 'UC4 Job Messenger' version '11.2.0+build.2347' started
+UCMDJP: *********************************************************************
+UCMDJP: ** JOB 0001458960 (ProcID:0000003968) START AT 20.02.2018/07:30:13 **
+UCMDJP: **                                    UTC TIME 20.02.2018/15:30:13 **
+UCMDJP: *********************************************************************
+Connected with agent 'APPUTILD'
+Program 'UC4 Job Messenger' version '11.2.0+build.2347' terminated normally
+GW JOB NAME:    ActivityEsc
+GW ENVIRONMENT: entdev1
+GW PRODUCT:     pc
+*---- launching process ----*
+
+c:\>java -Xmx8m -Xss256k -jar C:\NETDEVENT01\Guidewire\Java\BatchScheduler.jar "pc" "entdev1" "ActivityEsc" 
+2018-02-20 07:30:13,756 DEBUG WebServiceRequest:invokeService: reading from url http://api.saif.com/environmentapi/v2/values/guidewire/entdev1/gwbatchsupport.pc.batch.mainte.url/value
+WebServiceRequest:invokeService: reading from url http://api.saif.com/environmentapi/v2/values/guidewire/entdev1/gwbatchsupport.pc.batch.mainte.url/value
+2018-02-20 07:30:13,787 DEBUG WebServiceRequest:invokeService: reading from url http://api.saif.com/environmentapi/v2/values/guidewire/entdev1/gwbatchsupport.pc.batch.messagingtools.url/value
+WebServiceRequest:invokeService: reading from url http://api.saif.com/environmentapi/v2/values/guidewire/entdev1/gwbatchsupport.pc.batch.messagingtools.url/value
+2018-02-20 07:30:13,787 DEBUG WebServiceRequest:invokeService: reading from url http://api.saif.com/environmentapi/v2/values/guidewire/entdev1/gwbatchsupport.pc.batch.workqueue.url/value
+WebServiceRequest:invokeService: reading from url http://api.saif.com/environmentapi/v2/values/guidewire/entdev1/gwbatchsupport.pc.batch.workqueue.url/value
+BatchRunner:initAPI:_queueAPIUrl:http://gwappdev01:8180/pc/ws/com/saif/pc/integ/services/workqueue/WorkQueueAPI?wsdl
+2018-02-20 07:30:13,787 INFO Resolving MaintenanceToolsAPI client for PC (URL: http://gwappdev01:8180/pc/ws/gw/webservice/pc/pc900/MaintenanceToolsAPI?wsdl)
+2018-02-20 07:30:14,819 INFO Resolving WorkQueueAPI client for PC (URL: http://gwappdev01:8180/pc/ws/com/saif/pc/integ/services/workqueue/WorkQueueAPI?wsdl)
+2018-02-20 07:30:14,990 INFO Resolving MessagingToolsAPI client for PC (URL: http://gwappdev01:8180/pc/ws/gw/webservice/pc/pc900/MessagingToolsAPI?wsdl)
+2018-02-20 07:30:15,412 INFO ********** Batch [ActivityEsc] starting ************
+2018-02-20 07:30:15,537 INFO The batch [ActivityEsc] has been sucessfully validated
+2018-02-20 07:30:15,600 INFO The workqueue [ActivityEsc] has been successfully validated
+2018-02-20 07:30:15,631 INFO Batch [ActivityEsc] has been asynchronously triggered to run, pid=5831
+2018-02-20 07:30:15,631 DEBUG Poller.waitForProcessToFinish: Start polling
+setting pollflag to true
+2018-02-20 07:30:15,772 DEBUG Poller.waitForProcessToFinish: Poll result: process finished
+2018-02-20 07:30:15,772 DEBUG Poller.waitForProcessToFinish: Process finished. Exiting with code PROCESS_FINISHED
+2018-02-20 07:30:15,772 DEBUG Poller.waitForWorkQueueToFinish: Workers have been notified
+2018-02-20 07:30:15,772 DEBUG Poller.waitForWorkQueueToFinish: Start polling
+setting pollflag to true
+2018-02-20 07:30:15,881 DEBUG BatchRunner.areThereActiveWorkItems: There are no items waiting to be processed
+2018-02-20 07:30:15,881 INFO Poller.waitForWorkQueueToFinish: Polling result: no more available work items - exiting
+2018-02-20 07:30:15,881 DEBUG Poller.waitForWorkQueueToFinish: WorkQueue finished. Exiting.
+2018-02-20 07:30:15,881 INFO Polling has finished with the result PROCESS_FINISHED in 252 ms.
+2018-02-20 07:30:15,897 INFO There were 2 failed items while running Batch [ActivityEsc]
+2018-02-20 07:30:15,897 INFO Batch [ActivityEsc] has finished with the result = PROCESS_WORKITEM_FAILED. Execution time (in ms) = 480
+Exception in thread "main" com.saif.batch.util.BatchProcessException: Some of work items failed
+	at com.saif.batch.BatchRunner.interpretRunResults(Unknown Source)
+	at com.saif.batch.BatchRunner.main(Unknown Source)
+*---- end of process ----*
+Process ended with RETCODE 1
+
+c:\>C:\Automic\v11\Agents\Windows\bin\UCXJWX6M.EXE JNR=0001458960 MNR=0411 PNR=2311 IPA=10.1.1.58 TYP=E RET=1 TXT="        Job ended with retcode" 
+Program 'UC4 Job Messenger' version '11.2.0+build.2347' started
+UCMDJP: *********************************************************************
+UCMDJP: ** JOB 0001458960 (ProcID:0000003968) ABEND AT 20.02.2018/07:30:15 **
+UCMDJP: **                                    UTC TIME 20.02.2018/15:30:15 **
+UCMDJP: ** --------------------------------------------------------------- **
+UCMDJP: **                                RET-CODE:          1             **
+UCMDJP: **                                    USED:      0.000 CPU         **
+UCMDJP: *********************************************************************
+Connected with agent 'APPUTILD'
+Program 'UC4 Job Messenger' version '11.2.0+build.2347' terminated normally
+
+c:\>GOTO JOBENDE 
